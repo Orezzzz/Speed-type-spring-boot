@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+//import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Players;
@@ -13,8 +14,10 @@ public interface PlayerRepository extends JpaRepository <Players, Integer>{
 
 	Players findByNameAndPassword(String name, String password);
 	
-	@Query(value = "Select * FROM Player ORDER BY score DESC LIMIT 10", nativeQuery=true)
-	List<Players> findTopPlayers();
+	@Query(value = "Select * FROM players ORDER BY score DESC LIMIT 10", nativeQuery=true)
+	public List<Players> findTopPlayers();
+
+	//public List<Players> findByScore();
 	
 
 

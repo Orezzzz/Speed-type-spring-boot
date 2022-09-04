@@ -32,12 +32,17 @@ public class PlayersController {
 	        return repo.findAll();
 	    }
 	    
+	    /*@GetMapping("/getTop")
+	    public List<Players> getTopPlayers(){
+	        return repo.findByScore();
+	    }*/
+	    
 	    @GetMapping("/getTopPlayers")
 	    public List<Players> getTopPlayers(){
 	        return repo.findTopPlayers();
 	    }
 	    
-	   /* @GetMapping("/getAll/{name}")
+	  /*  @GetMapping("/getAll/{name}")
 	    public Player getPlayer(@PathVariable("name") String name){
 	        return repo.findByName(name);
 	    }
